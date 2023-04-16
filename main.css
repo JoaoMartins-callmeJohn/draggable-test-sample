@@ -42,7 +42,7 @@ body, html {
   resize: both;
   width: 25vh;
   height: 40vh;
-  padding-top: 3em;
+  border: double black;
   display: inline-flex;
 }
 
