@@ -6,6 +6,16 @@ window.addEventListener("load", async () => {
     const dashboardsContainer = document.getElementById('dashboards');
     let chartDiv = document.createElement("div");
     chartDiv.className = "chartDiv";
+
+    let closebutton = document.createElement('span');
+    closebutton.id = 'close';
+    closebutton.onclick=function(){
+      this.parentNode.remove(); 
+      return false;
+    };
+    closebutton.innerHTML = 'X';
+    chartDiv.appendChild(closebutton);
+
     let chartCanvas = document.createElement("canvas");
     chartCanvas.className = "chartcanvas";
     chartDiv.appendChild(chartCanvas);

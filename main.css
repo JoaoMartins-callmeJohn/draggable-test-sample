@@ -43,6 +43,7 @@ body, html {
   width: 25vh;
   height: 40vh;
   padding-top: 3em;
+  display: inline-flex;
 }
 
 #header .title {
@@ -62,4 +63,10 @@ body, html {
   height: 2em;
   width: calc(2em + 1.5em);
   border-radius: 2rem;
+}
+
+#close {
+  display:contents;
+  padding:2px 5px;
+  background:rgb(130, 130, 130);
 }
