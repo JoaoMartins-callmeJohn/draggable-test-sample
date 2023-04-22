@@ -16,10 +16,12 @@ var i = 0;
 
 window.addEventListener("load", async () => {
   const addChartButton = document.getElementById('addchart');
+  swapFlexbox();
   addChartButton.onclick = async () => {
     i++;
     const dashboardsContainer = document.getElementById('dashboards');
     let chartDiv = document.createElement("div");
+    chartDiv.className = "chartDiv";
     chartDiv.className = "chartDiv draggable";
 
     let closebutton = document.createElement('span');
@@ -46,9 +48,12 @@ window.addEventListener("load", async () => {
       {
         type: 'pie',
         data: {
+          labels: ['Type 1', 'Type 2'],
           labels: labels[i % 3],
           datasets: [
             {
+              label: 'Doors by type',
+              data: [13, 21],
               label: 'Mock Data',
               data: datas[i % 3],
               //backgroundColor:,
@@ -72,7 +77,7 @@ window.addEventListener("load", async () => {
 });
 
 var swapFlexbox = function () {
-  const containers = document.getElementById('dashboards');
+  const containers = document.querySelectorAll('#dashboards');
 
   if (containers.length === 0) {
     return false;
@@ -80,9 +85,10 @@ var swapFlexbox = function () {
 
   var swappable = new Swappable.default(containers, {
     draggable: ".draggable",
+    handle: ".draggable .draggable-handle",
     mirror: {
-      appendTo: containers,
-      constrainDimensions: true
+      //appendTo: selector,
+      appendTo: "body"
     }
   });
 
@@ -98,4 +104,3 @@ async function showToast(message) {
     showConfirmButton: false
   })
 }
-

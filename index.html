@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Testing swappable</title>
+  <title>AEC Cloud Information Model Explorer - BETA</title>
   <meta charset="utf-8" />
   <link rel="shortcut icon" href="http://cdn.autodesk.io/favicon.ico">
   <link rel="mask-icon" href="http://cdn.autodesk.io/favicon.ico">
@@ -19,14 +19,16 @@
       Add Chart
     </button>
   </div>
-  <div id="dashboards"></div>
+  <div class="draggable-zone" id="dashboards"></div>
   <!-- Sweet alert 2 to handle notifications -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- Chart js for graphics -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
   <!-- swappable -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/swappable/0.11.0/swappable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/swappable.js"></script>
+  <!-- Plugins only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/plugins.js"></script>
   <script src="./main.js"></script>
 </body>
 
