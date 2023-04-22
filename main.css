@@ -51,6 +51,10 @@ body, html {
   margin-right: auto;
 }
 
+.draggable-handle{
+  cursor: move;
+}
+
 .form-check-input {
   clear: left;
 }

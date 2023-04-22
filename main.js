@@ -1,15 +1,15 @@
 const autocolors = window['chartjs-plugin-autocolors'];
 
 var labels = [
-  ['Type 1','Type 2'],
-  ['Type 1','Type 2', 'Type 3'],
-  ['Type 1','Type 2', 'Type 3', 'Type 4']
+  ['Type 1', 'Type 2'],
+  ['Type 1', 'Type 2', 'Type 3'],
+  ['Type 1', 'Type 2', 'Type 3', 'Type 4']
 ]
 
 var datas = [
-  [14,26],
-  [61,72, 89],
-  [13,34, 99,12],
+  [14, 26],
+  [61, 72, 89],
+  [13, 34, 99, 12],
 ]
 
 var i = 0;
@@ -24,8 +24,8 @@ window.addEventListener("load", async () => {
 
     let closebutton = document.createElement('span');
     closebutton.id = 'close';
-    closebutton.onclick=function(){
-      this.parentNode.remove(); 
+    closebutton.onclick = function () {
+      this.parentNode.remove();
       return false;
     };
     closebutton.innerHTML = 'X';
@@ -46,11 +46,11 @@ window.addEventListener("load", async () => {
       {
         type: 'pie',
         data: {
-          labels: labels[i%3],
+          labels: labels[i % 3],
           datasets: [
             {
               label: 'Mock Data',
-              data: datas[i%3],
+              data: datas[i % 3],
               //backgroundColor:,
               hoverOffset: 4
             }
@@ -71,8 +71,8 @@ window.addEventListener("load", async () => {
   };
 });
 
-var swapFlexbox = function() {
-  const containers = document.querySelectorAll('#dashboards');
+var swapFlexbox = function () {
+  const containers = document.getElementById('dashboards');
 
   if (containers.length === 0) {
     return false;
@@ -80,12 +80,11 @@ var swapFlexbox = function() {
 
   var swappable = new Swappable.default(containers, {
     draggable: ".draggable",
-    handle: ".draggable .draggable-handle",
     mirror: {
-        //appendTo: selector,
-        appendTo: "body"
+      appendTo: containers,
+      constrainDimensions: true
     }
-});
+  });
 
   return swappable;
 }
